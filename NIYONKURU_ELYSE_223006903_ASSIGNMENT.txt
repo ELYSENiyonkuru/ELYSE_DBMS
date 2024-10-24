@@ -1,0 +1,234 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 979
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+mysql> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| huye2              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| ruhande            |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use ruhande;
+Database changed
+
+mysql> CREATE TABLE NGOMA(ID INT (10)PRIMARY KEY AUTO_INCREMENT NOT NULL,FIRST_NAME VARCHAR(20),LAST_NAME VARCHAR(20),GENDER VARCHAR(10),PROVINCE VARCHAR(10),DISTRICT VARCHAR(10),SECTOR VARCHAR(10),CELL VARCHAR(10),EMAIL VARCHAR(20),PHONE-NUMBER INT(12));
+Query OK, 0 rows affected, 2 warnings (0.01 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_ruhande |
++-------------------+
+| ngoma             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> desc ngoma;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| ID           | int          | NO   | PRI | NULL    |       |
+| FIRST_NAME   | varchar(20)  | NO   |     | NULL    |       |
+| LAST_NAME    | varchar(25)  | NO   |     | NULL    |       |
+| GENDER       | varchar(25)  | NO   |     | NULL    |       |
+| PRIVINCE     | varchar(255) | NO   |     | NULL    |       |
+| DISTRICT     | varchar(255) | NO   |     | NULL    |       |
+| SECTOR       | varchar(255) | NO   |     | NULL    |       |
+| CELL         | varchar(255) | NO   |     | NULL    |       |
+| EMAIL        | varchar(255) | NO   |     | NULL    |       |
+| PHONE-NUMBER | varchar(13)  | NO   |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+10 rows in set (0.00 secs
+
+
+-------------------------------------INSERTION--------------------------------------------------------------
+
+INSERT INTO `ngoma` (`ID`, `FIRST_NAME`, `LAST_NAME`,'GENDER', `PROVINCE`, `DISTRICT`, `SECTOR`, `CELL`, `EMAIL`, `PHONE_NUMBER`) VALUES ('01', 'ELYSE', 'NIYO','MALE', 'KIGALI', 'KICUKIRO', 'GATENGA', 'NYANZA', 'ELYSE01@GMAIL.COM', '0798765467'), ('02', 'HERVE', 'NIYOBYOSE','FEMALE', 'WEST', 'NYARUNGEGNGE', 'NYAMIRAMBO', 'KURYANYUMA', 'ELIVE02@GMSIL.COM', '0786453897'), ('03', 'KELIA', 'TETA','FEMALE',' 'EAST', 'RWAMAGANA', 'RUHUNDA', 'GATI', 'KELIA03@GMAIL.COM', '0786543879'), ('04', 'ELIGAN', 'NINZIZA','FEMALE', 'SORTH', 'NYANZA', 'MUBUGA', 'GIDATURWA', 'ELIGANI04@GMAIL.COM', '0788854325'), ('05', 'ELIANE', 'NSHUTI', 'MALE',''SOUTH', 'SOUTH', 'NGOMA', 'NGOMA', 'ELIANE05@GMAIL.COM', '0789645633'), ('06', 'BENIOT', 'NIYOGISUBIZO', 'FEMALE','EAST', 'KAYONZA', 'KABARE', 'KIGOMA', 'BENIOT06@GMAIL.COM', '0788654321'), ('07', 'HERBERT', 'HESHIMA','MALE' 'WEST', 'RUBAVU', 'GISENYI', 'UBUMUNTU', 'HERBERT07@GMAIL.COM', '0799865436'), ('08', 'BWIZA', 'DOROTHY','FEMALE', 'SOUTH', 'RUHANGO', 'GITWE', 'BYIMANA', 'DOROTHY08@GMAIL.COM', 0788510814), ('09', 'BRIAN', 'NTWALI','MALE', 'KIGALI', 'GASABO', 'KIMIRONKO', 'KIBAGABAGA', 'BRIAN09@"GMAIL.COM', '0768654326'), ('010', 'PACIFIC', 'MUGISHA','', 'SOUTH', 'MUHANGA', 'NYAMABUYE', 'GAHOGO', 'PACIFIC010@gmail.com', '0789654326');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+
+
+mysql> select *from ngoma;
++----+------------+--------------+--------+----------+--------------+------------+------------+----------------------+--------------+
+| ID | FIRST_NAME | LAST_NAME    | GENDER | PROVINCE | DISTRICT     | SECTOR     | CELL       | EMAIL                | PHONE_NUMBER |
++----+------------+--------------+--------+----------+--------------+------------+------------+----------------------+--------------+
+|  1 | ELYSE      | NIYO         | MALE   | KIGALI   | KICUKIRO     | GATENGA    | NYANZA     | ELYSE01@GMAIL.COM    |    798765467 |
+|  2 | HERVE      | NIYOBYOSE    | FEMALE | WEST     | NYARUNGEGNGE | NYAMIRAMBO | KURYANYUMA | ELIVE02@GMSIL.COM    |    786453897 |
+|  3 | KELIA      | TETA         | MALE   | EAST     | RWAMAGANA    | RUHUNDA    | GATI       | KELIA03@GMAIL.COM    |    786543879 |
+|  4 | ELIGAN     | NINZIZA      | FEMALE | SORTH    | NYANZA       | MUBUGA     | GIDATURWA  | ELIGANI04@GMAIL.COM  |    788854325 |
+|  5 | ELIANE     | NSHUTI       | MALE   | SOUTH    | HUYE         | NGOMA      | MUKONI     | ELIANE05@GMAIL.COM   |    789645633 |
+|  6 | BENIOT     | NIYOGISUBIZO | FEMALE | EAST     | KAYONZA      | KABARE     | KIGOMA     | BENIOT06@GMAIL.COM   |    788654321 |
+|  7 | HERBERT    | HESHIMA      | MALE   | WEST     | RUBAVU       | GISENYI    | UBUMUNTU   | HERBERT07@GMAIL.COM  |    799865436 |
+|  8 | BWIZA      | DOROTHY      | FEMALE | SOUTH    | RUHANGO      | GITWE      | BYIMANA    | DOROTHY08@GMAIL.COM  |    788510814 |
+|  9 | BRIAN      | NTWALI       | FEMALE | KIGALI   | GASABO       | KIMIRONKO  | KIBAGABAGA | BRIAN09"GMAIL.COM    |    768654326 |
+| 10 | PACIFIC    | MUGISHA      | MALE   | SOUTH    | MUHANGA      | NYAMABUYE  | GAHOGO     | PACIFIC010@gmail.com |    789654326 |
++----+------------+--------------+--------+----------+--------------+------------+------------+----------------------+--------------+
+
+---------------------ADD COLOMN------------------------
+
+
+
+mysql> ALTER TABLE NGOMA ADD AGE INT(5);
+Query OK, 10 rows affected, 1 warning (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 1
+
+
+
+----------------------------- UPDATE COLOUMN------------------------------------
+
+
+
+
+mysql> UPDATE NGOMA  SET AGE=50 WHERE ID =1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=40 WHERE ID =2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=30 WHERE ID =3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=20 WHERE ID =4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=70 WHERE ID =5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=60 WHERE ID =6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=45 WHERE ID =7;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=28 WHERE ID =8;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=42 WHERE ID =9;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA  SET AGE=74 WHERE ID =10;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
+
++----+------------+--------------+--------+----------+--------------+------------+------------+----------------------+--------------+------+
+| ID | FIRST_NAME | LAST_NAME    | GENDER | PROVINCE | DISTRICT     | SECTOR     | CELL       | EMAIL                | PHONE_NUMBER | AGE  |
++----+------------+--------------+--------+----------+--------------+------------+------------+----------------------+--------------+------+
+|  1 | ELYSE      | NIYO         | MALE   | KIGALI   | KICUKIRO     | GATENGA    | NYANZA     | ELYSE01@GMAIL.COM    |    798765467 |   50 |
+|  2 | HERVE      | NIYOBYOSE    | FEMALE | WEST     | NYARUNGEGNGE | NYAMIRAMBO | KURYANYUMA | ELIVE02@GMSIL.COM    |    786453897 |   40 |
+|  3 | KELIA      | TETA         | MALE   | EAST     | RWAMAGANA    | RUHUNDA    | GATI       | KELIA03@GMAIL.COM    |    786543879 |   30 |
+|  4 | ELIGAN     | NINZIZA      | FEMALE | SORTH    | NYANZA       | MUBUGA     | GIDATURWA  | ELIGANI04@GMAIL.COM  |    788854325 |   20 |
+|  5 | ELIANE     | NSHUTI       | MALE   | SOUTH    | HUYE         | NGOMA      | MUKONI     | ELIANE05@GMAIL.COM   |    789645633 |   70 |
+|  6 | BENIOT     | NIYOGISUBIZO | FEMALE | EAST     | KAYONZA      | KABARE     | KIGOMA     | BENIOT06@GMAIL.COM   |    788654321 |   60 |
+|  7 | HERBERT    | HESHIMA      | MALE   | WEST     | RUBAVU       | GISENYI    | UBUMUNTU   | HERBERT07@GMAIL.COM  |    799865436 |   45 |
+|  8 | BWIZA      | DOROTHY      | FEMALE | SOUTH    | RUHANGO      | GITWE      | BYIMANA    | DOROTHY08@GMAIL.COM  |    788510814 |   28 |
+|  9 | BRIAN      | NTWALI       | FEMALE | KIGALI   | GASABO       | KIMIRONKO  | KIBAGABAGA | BRIAN09"GMAIL.COM    |    768654326 |   42 |
+| 10 | PACIFIC    | MUGISHA      | MALE   | SOUTH    | MUHANGA      | NYAMABUYE  | GAHOGO     | PACIFIC010@gmail.com |    789654326 |   74 |
++----+------------+--------------+--------+----------+--------------+------------+------------+----------------------+--------------+------+
+10 rows in set (0.00 sec)
+
+
+-------------------------------------SELECT SOME COLUMN FROM TABLE----------------------------------
+
+
+
+
+mysql> SELECT FIRST_NAME,GENDER,SECTOR,EMAIL,AGE FROM NGOMA;
++------------+--------+------------+----------------------+------+
+| FIRST_NAME | GENDER | SECTOR     | EMAIL                | AGE  |
++------------+--------+------------+----------------------+------+
+| ELYSE      | MALE   | GATENGA    | ELYSE01@GMAIL.COM    |   50 |
+| HERVE      | FEMALE | NYAMIRAMBO | ELIVE02@GMSIL.COM    |   40 |
+| KELIA      | MALE   | RUHUNDA    | KELIA03@GMAIL.COM    |   30 |
+| ELIGAN     | FEMALE | MUBUGA     | ELIGANI04@GMAIL.COM  |   20 |
+| ELIANE     | MALE   | NGOMA      | ELIANE05@GMAIL.COM   |   70 |
+| BENIOT     | FEMALE | KABARE     | BENIOT06@GMAIL.COM   |   60 |
+| HERBERT    | MALE   | GISENYI    | HERBERT07@GMAIL.COM  |   45 |
+| BWIZA      | FEMALE | GITWE      | DOROTHY08@GMAIL.COM  |   28 |
+| BRIAN      | FEMALE | KIMIRONKO  | BRIAN09"GMAIL.COM    |   42 |
+| PACIFIC    | MALE   | NYAMABUYE  | PACIFIC010@gmail.com |   74 |
++------------+--------+------------+----------------------+------+
+10 rows in set (0.00 sec)
+
+
+
+
+-----------------------USE OF AND & OR------------------------------
+
+
+mysql> SELECT *FROM NGOMA WHERE GENDER='MALE' AND EMAIL LIKE 'E%';
++----+------------+-----------+--------+----------+----------+---------+--------+--------------------+--------------+------+
+| ID | FIRST_NAME | LAST_NAME | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL   | EMAIL              | PHONE_NUMBER | AGE  |
++----+------------+-----------+--------+----------+----------+---------+--------+--------------------+--------------+------+
+|  1 | ELYSE      | NIYO      | MALE   | KIGALI   | KICUKIRO | GATENGA | NYANZA | ELYSE01@GMAIL.COM  |    798765467 |   50 |
+|  5 | ELIANE     | NSHUTI    | MALE   | SOUTH    | HUYE     | NGOMA   | MUKONI | ELIANE05@GMAIL.COM |    789645633 |   70 |
++----+------------+-----------+--------+----------+----------+---------+--------+--------------------+--------------+------+
+2 rows in set (0.00 sec)
+
+
+mysql> SELECT *FROM NGOMA WHERE FIRST_NAME LIKE 'I%' OR LAST_NAME LIKE 'N%' ;
++----+------------+--------------+--------+----------+--------------+------------+------------+---------------------+--------------+------+
+| ID | FIRST_NAME | LAST_NAME    | GENDER | PROVINCE | DISTRICT     | SECTOR     | CELL       | EMAIL               | PHONE_NUMBER | AGE  |
++----+------------+--------------+--------+----------+--------------+------------+------------+---------------------+--------------+------+
+|  1 | ELYSE      | NIYO         | MALE   | KIGALI   | KICUKIRO     | GATENGA    | NYANZA     | ELYSE01@GMAIL.COM   |    798765467 |   50 |
+|  2 | HERVE      | NIYOBYOSE    | FEMALE | WEST     | NYARUNGEGNGE | NYAMIRAMBO | KURYANYUMA | ELIVE02@GMSIL.COM   |    786453897 |   40 |
+|  4 | ELIGAN     | NINZIZA      | FEMALE | SORTH    | NYANZA       | MUBUGA     | GIDATURWA  | ELIGANI04@GMAIL.COM |    788854325 |   20 |
+|  5 | ELIANE     | NSHUTI       | MALE   | SOUTH    | HUYE         | NGOMA      | MUKONI     | ELIANE05@GMAIL.COM  |    789645633 |   70 |
+|  6 | BENIOT     | NIYOGISUBIZO | FEMALE | EAST     | KAYONZA      | KABARE     | KIGOMA     | BENIOT06@GMAIL.COM  |    788654321 |   60 |
+|  9 | BRIAN      | NTWALI       | FEMALE | KIGALI   | GASABO       | KIMIRONKO  | KIBAGABAGA | BRIAN09"GMAIL.COM   |    768654326 |   42 |
++----+------------+--------------+--------+----------+--------------+------------+------------+---------------------+--------------+------+
+6 rows in set (0.00 sec)
+
+
+--------------------------------------------------DROP COLUMN--------------------------------------------------
+
+
+mysql> ALTER TABLE NGOMA DROP EMAIL;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA;
++----+------------+--------------+--------+----------+--------------+------------+------------+--------------+------+
+| ID | FIRST_NAME | LAST_NAME    | GENDER | PROVINCE | DISTRICT     | SECTOR     | CELL       | PHONE_NUMBER | AGE  |
++----+------------+--------------+--------+----------+--------------+------------+------------+--------------+------+
+|  1 | ELYSE      | NIYO         | MALE   | KIGALI   | KICUKIRO     | GATENGA    | NYANZA     |    798765467 |   50 |
+|  2 | HERVE      | NIYOBYOSE    | FEMALE | WEST     | NYARUNGEGNGE | NYAMIRAMBO | KURYANYUMA |    786453897 |   40 |
+|  3 | KELIA      | TETA         | MALE   | EAST     | RWAMAGANA    | RUHUNDA    | GATI       |    786543879 |   30 |
+|  4 | ELIGAN     | NINZIZA      | FEMALE | SORTH    | NYANZA       | MUBUGA     | GIDATURWA  |    788854325 |   20 |
+|  5 | ELIANE     | NSHUTI       | MALE   | SOUTH    | HUYE         | NGOMA      | MUKONI     |    789645633 |   70 |
+|  6 | BENIOT     | NIYOGISUBIZO | FEMALE | EAST     | KAYONZA      | KABARE     | KIGOMA     |    788654321 |   60 |
+|  7 | HERBERT    | HESHIMA      | MALE   | WEST     | RUBAVU       | GISENYI    | UBUMUNTU   |    799865436 |   45 |
+|  8 | BWIZA      | DOROTHY      | FEMALE | SOUTH    | RUHANGO      | GITWE      | BYIMANA    |    788510814 |   28 |
+|  9 | BRIAN      | NTWALI       | FEMALE | KIGALI   | GASABO       | KIMIRONKO  | KIBAGABAGA |    768654326 |   42 |
+| 10 | PACIFIC    | MUGISHA      | MALE   | SOUTH    | MUHANGA      | NYAMABUYE  | GAHOGO     |    789654326 |   74 |
++----+------------+--------------+--------+----------+--------------+------------+------------+--------------+------+
+10 rows in set (0.00 sec)
+
+
